@@ -1,0 +1,56 @@
+﻿body
+{
+    font-family: 'Times New Roman';
+    background-color: rgb(89, 89, 89);
+    font-size:15px;
+}
+
+h1
+{
+    color: gray;
+}
+
+#gray
+{
+    color: gray;
+}
+
+#yellow
+{
+    color: rgb(219, 190, 132);
+}
+
+#red
+{
+    color: red;
+}
+
+#orange
+{
+    color: rgb(210, 101, 65);
+}
+
+#em
+{
+    font-style:italic;
+    color: white;
+}
+
+td
+{
+    vertical-align: top;
+    padding-bottom:1em;
+    padding-right:1em;
+}
+
+#dot
+{
+    background-color: rgb(113, 180, 122);
+    width:10px;
+    height:10px;
+	-webkit-border-radius: 50px;
+	display:inline-block;
+	margin:0 3px 0 0;
+}
+
+

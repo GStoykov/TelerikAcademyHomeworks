@@ -1,0 +1,61 @@
+﻿body
+{
+    background-color: rgb(169, 169, 169);
+}
+
+header
+{
+    text-align:center;
+}
+
+section a
+{
+    text-decoration:none;
+    color:inherit;
+}
+
+header a
+{
+    font-weight:bolder;
+    font-size:x-large;
+    text-decoration:none;
+    color: white;
+}
+
+.current
+{
+    background-color: rgb(211, 211, 211);
+}
+
+h1
+{
+    color: white;
+}
+
+section h1
+{
+    text-align:left;
+    font-size:x-large;
+}
+
+section footer p
+{
+    font-size:13px;
+}
+
+.last
+{
+    text-align:center;
+    font-size:large;
+}
+
+li:last-child
+{
+    text-decoration:underline;
+}
+
+ul
+{
+    list-style:none;
+}
+

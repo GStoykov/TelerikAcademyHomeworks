@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>6. Point in circle</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <link href="Styles.css" rel="stylesheet" />
+</head>
+<body>
+    <label for="x">Enter x: </label>
+    <input id="x" />
+    <br />
+    <label for="y">Enter y: </label>
+    <input id="y" />
+    <br />
+    <a href="#" onclick="Function()">Calculate point`s position</a>
+    
+    <div id="js-console">
+	    <script src="scripts/js-console.js"> </script>
+        <script>
+            function Function() {
+                var x = jsConsole.readFloat("#x");
+                var y = jsConsole.readFloat("#y");
+                x = x * x;
+                y = y * y;
+                if (Math.sqrt(x + y) < 5) {
+                    jsConsole.writeLine("The point is IN the circle.");
+                }
+                else {
+                    jsConsole.writeLine("The point is OUT the circle.");
+                }
+            }
+
+       </script>
+    </div>
+</body>
+</html>

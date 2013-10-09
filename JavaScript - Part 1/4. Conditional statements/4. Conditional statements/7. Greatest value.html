@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>7. Greatest value</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <link href="Styles.css" rel="stylesheet" />
+</head>
+<body>
+
+    <!--Write a script that finds the greatest of given 5 variables.-->
+
+    
+    Enter 5 numbers: <br />
+    <label for="a"> </label>
+    <input id="a" />
+    <br />
+    <label for="b"> </label>
+    <input id="b" />
+    <br />
+    <label for="c"> </label>
+    <input id="c" />
+    <br />
+    <label for="d"> </label>
+    <input id="d" />
+    <br />
+    <label for="e"> </label>
+    <input id="e" />
+    <br />
+    <a href="#" onclick="Function()">Find the biggest</a>
+    
+    <div id="js-console">
+	    <script src="scripts/js-console.js"> </script>
+        <script>
+            function Function() {
+                var a = jsConsole.readFloat("#a");
+                var b = jsConsole.readFloat("#b");
+                var c = jsConsole.readFloat("#c");
+                var d = jsConsole.readFloat("#d");
+                var e = jsConsole.readFloat("#e");
+                var arr = [a, b, c, d, e];
+                for (var i = 0; i < arr.length; i++) {
+                    if (arr[i] > a) {
+                        a = arr[i];
+                    }
+                }
+                jsConsole.writeLine(a);
+            }
+       </script>
+    </div>
+</body>
+</html>

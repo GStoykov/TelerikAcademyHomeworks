@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        // credits: vic.alexiev
+        var specialConsole = (function () {
+            function parseString(string, optionalParams) {
+                var result = "";
+
+                if (string) {
+                    result = string.toString();
+                    var len = arguments.length;
+                    if (optionalParams) {
+                        for (var i = 0; i < len - 1; i++) {
+                            var pattern = "\\{" + i + "\\}";
+                            var regex = new RegExp(pattern, "g");
+
+                            result = result.replace(regex, arguments[i + 1].toString());
+                        }
+                    }
+                }
+                return result;
+            }
+
+            function writeLine(string, optionalParams) {
+                var result = parseString.apply(null, arguments);
+                console.log(result);
+            }
+
+            function writeError(string, optionalParams) {
+                var result = parseString.apply(null, arguments);
+                console.error(result);
+            }
+
+            function writeWarning(string, optionalParams) {
+                var result = parseString.apply(null, arguments);
+                console.warn(result);
+            }
+
+            return {
+                writeLine: writeLine,
+                writeError: writeError,
+                writeWarning: writeWarning
+            };
+        })();
+
+        specialConsole.writeLine("Number {0}{1}{2}", 1, 2, 3);
+        specialConsole.writeError("Major error!");
+        specialConsole.writeWarning("Danger!");
+    </script>
+
+
+</body>
+</html>

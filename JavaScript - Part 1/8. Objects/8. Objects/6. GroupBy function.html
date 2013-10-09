@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>5. HasProperty function</title>
+<link href="styles/js-console.css" rel="stylesheet" />
+    <link href="Styles.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console">
+	    <script src="scripts/js-console.js"> </script>
+        <script>
+        //Write a function that groups an array of persons by age, first or last name. 
+        //The function must return an associative array, with keys - the groups, and values -arrays with persons in this groups
+        //Use function overloading (i.e. just one function)
+
+            function Person(firstName, lastName, age) {
+                return {
+                    firstname: firstName,
+                    lastname: lastName,
+                    age: age,
+                    toString: function Output() {
+                        return this.FirstName + " " + this.LastName;
+                    }
+                };
+            }
+
+            var persons = [
+                Person("Georgi", "Petrov", 15),
+                Person("Ivan", "Ivanov", 30),
+                Person("Ralica", "Stoikova", 20),
+                Person("Qna", "Jekova", 18),
+                Person("Veselina", "Kostadinova", 31),
+            ];
+
+            function GroupBy(arr, key) {
+                var resultArray = new Array(arr.length);
+                if (key == "age") {
+                    for (var i = 0; i < arr.length - 1; i++) {
+                        var minAge = 200;
+                        for (var j = i + 1; j < arr.length; j++) {
+                            if (arr[j].age < arr[i].age) {
+                                resultArray[i] = arr[j];
+                            }
+                        }
+                    }
+                }
+            }
+
+       </script>
+    </div>
+</body>
+</html>
+</body>
+</html>

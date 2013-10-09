@@ -1,0 +1,90 @@
+﻿body
+{
+    background-color: rgb( 59, 59, 59);
+    color: rgb( 167, 167, 167);
+}
+
+body, fieldset, p {
+     margin: 0; 
+}
+
+
+form{
+    padding: 20px 10px 20px 55px;
+    background: #343434 url('monitor.png') no-repeat 17px 10px;
+    box-shadow:inset 0px -8px 20px rgb(29, 29, 29);
+}
+
+fieldset
+{
+    border:none;
+}
+
+
+legend
+{
+    color:white;
+    float:left;
+    margin-left:20px;
+    font-size:22px;
+    font-weight:bold;
+}
+
+
+input::-webkit-input-placeholder
+{
+    color:black;
+}
+
+input
+{
+    margin-left:20px;
+}
+
+button
+{
+    margin-left:15px;
+    border-radius:10px;
+    width: 60px;
+    height: 30px;
+    border:2px solid white;
+    color:white;
+    text-transform:uppercase;
+
+    background-image: linear-gradient(bottom, rgb(255,7,7) 32%, rgb(255,0,0) 66%, rgb(240,104,104) 100%);
+    background-image: -o-linear-gradient(bottom, rgb(255,7,7) 32%, rgb(255,0,0) 66%, rgb(240,104,104) 100%);
+    background-image: -moz-linear-gradient(bottom, rgb(255,7,7) 32%, rgb(255,0,0) 66%, rgb(240,104,104) 100%);
+    background-image: -webkit-linear-gradient(bottom, rgb(255,7,7) 32%, rgb(255,0,0) 66%, rgb(240,104,104) 100%);
+    background-image: -ms-linear-gradient(bottom, rgb(255,7,7) 32%, rgb(255,0,0) 66%, rgb(240,104,104) 100%);
+    
+    background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.32, rgb(255,7,7)),
+	color-stop(0.66, rgb(255,0,0)),
+	color-stop(1, rgb(240,104,104)));
+}
+
+.article {
+    padding: 0 20px;
+    width: 600px;
+}
+
+strong
+{
+    font-weight: normal;
+    color:white;
+}
+
+h1
+{
+    color: rgb(255, 213, 34);
+    font-size: 22px;
+    text-transform: lowercase;
+    font-weight: normal;
+}
+
+
+
+

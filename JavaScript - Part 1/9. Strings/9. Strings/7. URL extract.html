@@ -1,0 +1,57 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <script src="StringBuilder.js"></script>
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        // Write a script that parses an URL address given in the format:
+        // and extracts from it the [protocol], [server] and [resource] elements.
+        // Return the elements in a JSON object
+
+        var input = "http://www.devbg.org/forum/index.php ";
+        var jsonUrl = URLtoJSON(input);
+
+        jsConsole.writeLine(jsonUrl.protocol);
+        jsConsole.writeLine(jsonUrl.server);
+        jsConsole.writeLine(jsonUrl.resource);
+
+        function URLtoJSON(url) {
+            var index = 0;
+            var stringBuilder = buildStringBuilder();
+            var protocol, server, resource;
+
+            while (url[index] != ":") {
+                stringBuilder.append(url[index]);
+                index++;
+            }
+            protocol = stringBuilder.toString();
+            stringBuilder.Clear();
+
+            index += 3;
+            while (url[index] != "/") {
+                stringBuilder.append(url[index]);
+                index++;
+            }
+            server = stringBuilder.toString();
+            stringBuilder.Clear();
+
+            while (url[index] != undefined) {
+                stringBuilder.append(url[index]);
+                index++;
+            }
+            resource = stringBuilder.toString();
+
+            return {
+                protocol: protocol,
+                server: server,
+                resource: resource
+            }
+        }
+
+    </script>
+</body>
+</html>

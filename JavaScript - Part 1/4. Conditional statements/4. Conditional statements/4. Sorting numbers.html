@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>4. Sorting numbers in descending order</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <link href="Styles.css" rel="stylesheet" />
+</head>
+<body>
+
+    <!--Sort 3 real values in descending order using nested if statements.-->
+    
+    <label for="a">Enter a: </label>
+    <input id="a" />
+    <br />
+    <label for="b">Enter b: </label>
+    <input id="b" />
+    <br />
+    <label for="c">Enter c: </label>
+    <input id="c" />
+    <br />
+    <a href="#" onclick="Function()">Sort the numbers</a>
+    
+    <div id="js-console">
+	    <script src="scripts/js-console.js"> </script>
+        <script>
+            function Function() {
+                var a = jsConsole.readFloat("#a");
+                var b = jsConsole.readFloat("#b");
+                var c = jsConsole.readFloat("#c");
+                var biggest = null;
+                var middle = null;
+                var smallest = null;
+
+                if (a >= b && a >= c) {
+                    biggest = a;
+                    if (b >= c) {
+                        middle = b;
+                        smallest = c;
+                    }
+                    else {
+                        middle = c;
+                        smallest = b;
+                    }
+                }
+                else if (b >= a && b >= c) {
+                    biggest = b;
+                    if (a >= c) {
+                        middle = a;
+                        smallest = c;
+                    }
+                    else {
+                        middle = c;
+                        smallest = a;
+                    }
+                }
+                else {
+                    biggest = c;
+                    if (a >= b) {
+                        middle = a;
+                        smallest = b;
+                    }
+                    else {
+                        middle = b;
+                        smallest = a;
+                    }
+                }
+
+                jsConsole.writeLine(biggest + " > " + middle + " > " + smallest);
+
+            }
+
+       </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>8. Number`s name</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <link href="Styles.css" rel="stylesheet" />
+</head>
+<body>
+    
+    <label for="number">Enter number: </label>
+    <input id="number" />
+    <br />
+    <a href="#" onclick="Function()">Show the pronounce</a>
+    
+    <div id="js-console">
+	    <script src="scripts/js-console.js"> </script>
+        <script>
+            function Function() {
+                var num = jsConsole.readInteger("#number");
+                var num20 = [ "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
+                var decNum = ["twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety" ];
+                // 0 - 19
+                if (num < 20)
+                {
+                    jsConsole.writeLine("Number is " + num20[num]);
+                }
+
+                // 20 - 99
+                if ((num > 19) && (num < 100))
+                {
+                    var unit = null;
+                    var dec = null;
+                    dec = Math.floor((num / 10)) - 2;
+                    unit = num % 10;
+                    if (unit == 0)
+                    {
+                        jsConsole.writeLine("Number is " + decNum[dec]);
+                    }
+                    else
+                    {
+                        jsConsole.writeLine("Number is " + decNum[dec] + " " + num20[unit]);
+                    }
+                }
+
+                // 100 - 999
+                if ((num > 99) && (num < 1000))
+                {
+                    var hundread = null;
+                    var dec = null;
+                    hundread =  Math.floor((num / 100));
+                    dec = num % 100;
+
+                    if (dec < 20)
+                    {
+                        if (dec == 0)
+                        {
+                            jsConsole.writeLine("Number is " + num20[hundread] + " hundread.");
+                        }
+                        else
+                        {
+                            jsConsole.writeLine("Number is " +  num20[hundread] + " hundread and " + num20[dec]);
+                        }
+                    }
+                    if ((dec > 19) && (dec < 100))
+                    {
+                        var unit = null;
+                        unit = dec % 10;
+                        dec = Math.floor((dec / 10)) - 2;
+                        if (unit == 0)
+                        {
+                            jsConsole.writeLine("Number is " + num20[hundread] + " hundread and " + decNum[dec]);
+                        }
+                        else
+                        {
+                            jsConsole.writeLine("Number is "+ num20[hundread] + " hundread and " + decNum[dec] + " "+ num20[unit]);
+                        }
+                    }
+                }
+                
+            }
+       </script>
+    </div>
+</body>
+</html>

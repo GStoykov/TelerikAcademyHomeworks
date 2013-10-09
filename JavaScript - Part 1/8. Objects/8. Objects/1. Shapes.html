@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>1. Shapes</title>
+<link href="styles/js-console.css" rel="stylesheet" />
+    <link href="Styles.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console">
+	    <script src="scripts/js-console.js"> </script>
+        <script>
+            // Write functions for working with shapes in  standard Planar coordinate system
+            // Points are represented by coordinates P(X, Y)
+            // Lines are represented by two points, marking their beginning and ending
+            // L(P1(X1,Y1),P2(X2,Y2))
+            // - Calculate the distance between two points
+            // - Check if three lines can form a triangle
+
+            // Object Point
+            function Point(x, y) {
+                return {
+                    x: x,
+                    y: y,
+                    toString: function PointString() {
+                        return "(" + this.x + ", " + this.y + ")";
+                    }
+                };
+            }
+
+            // Object Line
+            function Line(point1, point2) {
+                return {
+                    pointA: point1,
+                    pointB: point2,
+                };
+            }
+
+            function CalculateDistance(point1, point2) {
+                var a = Math.abs(point1.x - point2.x);
+                var b = Math.abs(point1.y - point2.y);
+                return Math.sqrt(parseFloat(a * a + b * b));
+            }
+
+            function IsPossibleToFormATriange(side1, side2, side3) {
+                var a = CalculateDistance(side1.pointA, side1.pointB);
+                var b = CalculateDistance(side2.pointA, side2.pointB);
+                var c = CalculateDistance(side3.pointA, side3.pointB);
+                if (a + b > c && a + c > b && b + c > a) {
+                    return "True";
+                }
+                else {
+                    return "False";
+                }
+            }
+
+            var p1 = Point(1, 1);
+            var p2 = Point(2, 2);
+            jsConsole.writeLine(CalculateDistance(p2, p1));
+
+            var sideA = Line(Point(0, 0), Point(3, 3));
+            var sideB = Line(Point(0, 0), Point(4, 4));
+            var sideC = Line(Point(0, 0), Point(5, 5));
+            jsConsole.writeLine(IsPossibleToFormATriange(sideA, sideB, sideC));
+
+       </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        for (var i = 0; i < 5; i++) {
+            generateDiv();
+        }
+
+        var divsList = document.querySelectorAll("div");
+        var angle = 0;
+        var radius = 100;
+        spinDivs();
+
+        function spinDivs() {
+            for (var i = 0; i < 5; i++) {
+                divsList[i].style.left = Math.cos(angle + 2 * Math.PI / divsList.length * i) / radius * 10000 + 220 +'px';
+                divsList[i].style.top = Math.sin(angle + 2 * Math.PI / divsList.length * i) / radius * 10000 + 150 + 'px';
+            }
+
+            angle = angle + 0.2;
+
+            setTimeout(spinDivs, 100);
+        }
+
+        function generateDiv() {
+            var div = document.createElement("div");
+            div.style.height = "50px";
+            div.style.width = "50px";
+            div.style.borderRadius = "50px";
+            div.style.position = "absolute";
+            div.style.backgroundColor = generateRandomColor();
+            document.body.appendChild(div);
+        }
+        
+        function generateRandomColor() {
+            var red = (Math.random() * 256) | 0;
+            var green = (Math.random() * 256) | 0;
+            var blue = (Math.random() * 256) | 0;
+
+            return "rgb(" + red + "," + green + "," + blue + ")";
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>3. Min and Max element in sequence</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <link href="Styles.css" rel="stylesheet" />
+</head>
+<body>
+
+    <!--Write a script that finds the max and min number from a sequence of numbers-->
+    
+    <div id="js-console">
+	    <script src="scripts/js-console.js"> </script>
+        <script>
+            
+                var arr = [4, 2, 1, 4, 7, -3, 10];
+                var smallest = arr[0];
+                var biggest = arr[0];
+                jsConsole.writeLine("Array`s elements are:");
+                for (var i = 0; i < arr.length; i++) {
+                    jsConsole.write(arr[i] + ", ");
+                }
+                jsConsole.writeLine();
+                for (var i = 1; i < arr.length; i++) {
+                    if (arr) {
+                        if (arr[i] < smallest) {
+                            smallest = arr[i];
+                        }
+                        if (arr[i] > biggest) {
+                            biggest = arr[i];
+                        }
+                    }
+                }
+                jsConsole.writeLine("Smallest element is: " + smallest);
+                jsConsole.writeLine("Biggest element is: " + biggest);
+
+            
+
+       </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>ConsoleModule</title>
+</head>
+<body>
+    <script>
+        // Add property inherit to Function
+        Function.prototype.inherit = function (parent) {
+            this.prototype = new parent();
+            this.prototype.constructor = parent;
+        }
+
+        function PropulsionUnit() {
+            this.acceleration = 0;
+        }
+
+        function Wheel(radius) {
+            PropulsionUnit.apply(this, arguments);
+            this.radius = radius;
+            this.acceleration = 2 * Math.PI * this.radius;
+        }
+
+        Wheel.inherit(PropulsionUnit);
+
+        function PropellingNozzle(power) {
+            PropulsionUnit.apply(this, arguments);
+            this.power = power;
+            this.afterburnerSwitch = false;
+            if (this.afterburnerSwitch) {
+                this.acceleration = 2 * this.power;
+            }
+            else {
+                this.acceleration =  this.power;
+            }
+        }
+
+        PropellingNozzle.inherit(PropulsionUnit);
+
+        function Propeller(numberFins) {
+            PropulsionUnit.apply(this, arguments);
+            this.numberFins = numberFins;
+            this.spinDirection = true;
+            if (this.spinDirection) {
+                this.acceleration = this.numberFins;
+            }
+            else {
+                this.acceleration = -this.numberFins;
+            }
+        }
+
+        Propeller.inherit(PropulsionUnit);
+
+        function Vehicle(speed, propulsionUnits) {
+            this.speed = speed;
+            this.propulsionUnits = propulsionUnits;
+        }
+
+        Vehicle.prototype.accelerate = function () {
+            var totalAcceleration = 0;
+            var length = this.propulsionUnits.length;
+            for (var count = 0; count < length; count++) {
+                totalAcceleration += this.propulsionUnits[count].acceleration;
+            }
+
+            this.speed += totalAcceleration;
+        }
+
+        function LandVehicle(speed, propulsionUnits) {
+            Vehicle.apply(this, arguments);
+        }
+
+        LandVehicle.inherit(Vehicle);
+
+        function AirVehicle(speed, propulsionUnits) {
+            Vehicle.apply(this, arguments);
+        }       
+
+        AirVehicle.inherit(Vehicle);
+
+        AirVehicle.prototype.turn = function () {
+            if (this.propulsionUnits[0].afterburnerSwitch) {
+                this.propulsionUnits[0].afterburnerSwitch = false;
+            }
+            else {
+                this.propulsionUnits[0].afterburnerSwitch = true;
+            }
+        }
+
+        function WaterVehicle(speed, propulsionUnits) {
+            Vehicle.apply(this, arguments);
+        }
+
+        WaterVehicle.inherit(Vehicle);
+
+        WaterVehicle.prototype.changeSpin = function (position) {
+            if (this.propulsionUnits[position].spinDirection) {
+                this.propulsionUnits[position].spinDirection = false;
+            }
+            else {
+                this.propulsionUnits[position].spinDirection = true;
+            }
+        }
+
+        function AmphibiousVehicle(speed, landPropulsionUnits, waterPropulsionUnits) {
+            Vehicle.apply(this, arguments);
+            this.terrain = true;
+            this.landPropulsionUnits = landPropulsionUnits;
+            this.waterPropulsionUnits = waterPropulsionUnits;
+            this.propulsionUnits = this.terrain ? this.landPropulsionUnits : this.waterPropulsionUnits;
+        }
+
+        AmphibiousVehicle.inherit(Vehicle);
+
+        AmphibiousVehicle.prototype.changeTerrain = function () {
+            if (this.terrain) {
+                this.terrain = false;
+            }
+            else {
+                this.terrain = true;
+            }
+        }
+    </script>
+</body>
+</html>

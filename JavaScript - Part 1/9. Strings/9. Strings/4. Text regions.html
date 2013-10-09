@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>4. Text regions</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <link href="Styles.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console">
+	    <script src="scripts/js-console.js"> </script>
+        <script>
+            var text = "We are <mixcase>living</mixcase> in a <upcase>yellow submarine</upcase>." 
+            + "We <mixcase>don't</mixcase> have <lowcase>Anything</lowcase> else.";
+            jsConsole.writeLine(text);
+            var textObj = new String(text);
+            textObj = MakeUpperCase(textObj);
+            textObj = MakeLowerCase(textObj);
+            textObj = MakeMixCase(textObj);
+            jsConsole.writeLine(textObj);
+
+            function MakeUpperCase(text) {
+                var startIndex = text.indexOf("<upcase>");
+                while (startIndex > -1) {
+                    var substring = text.substr(startIndex + 8, text.indexOf("</upcase>", startIndex) - startIndex);
+                    var newSubs = substring.toUpperCase();
+                    text = text.replace(substring, newSubs);
+                    startIndex = text.indexOf("<upcase>", startIndex + 8);
+                }
+                return text;
+            }
+
+            function MakeLowerCase(text) {
+                var startIndex = text.indexOf("<lowcase>");
+                while (startIndex > -1) {
+                    var substring = text.substr(startIndex + 8, text.indexOf("</lowcase>", startIndex) - startIndex);
+                    var newSubs = substring.toLowerCase();
+                    text = text.replace(substring, newSubs);
+                    startIndex = text.indexOf("<lowcase>", startIndex + 9);
+                }
+                return text;
+            }
+
+            function MakeMixCase(text) {
+                var startIndex = text.indexOf("<mixcase>");
+                while (startIndex > -1) {
+                    var substring = text.substr(startIndex + 8, text.indexOf("</mixcase>", startIndex) - startIndex);
+                    var newSubs = substring;
+                    for (var i = 0; i < newSubs.length; i++) {
+                        if (i % 2 == 0) {
+                           newSubs =  newSubs.replace(newSubs[i], newSubs[i].toUpperCase());
+                        }
+                    }
+                    text = text.replace(substring, newSubs);
+                    startIndex = text.indexOf("<mixcase>", startIndex + 9);
+                }
+                return text;
+            }
+       </script>
+    </div>
+</body>
+</html>

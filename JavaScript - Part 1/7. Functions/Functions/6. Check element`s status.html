@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>6. Check element`s status</title>
+<link href="styles/js-console.css" rel="stylesheet" />
+    <link href="Styles.css" rel="stylesheet" />
+</head>
+<body>
+    Enter element`s index: 
+    <label for="index" ></label>
+    <input id="index" />
+    <a href="#" onclick="Check()">Check</a>
+    <div id="js-console">
+	    <script src="scripts/js-console.js"> </script>
+        <script>
+            // Write a function that checks if the element at given position in
+            // given array of integers is bigger than its two neighbours (when such exist).
+
+            var arrayOfNumbers = [1, 2, 1, 4, -32, 15, 7, 23, -32, 48];
+            jsConsole.write("Array: { ");
+            jsConsole.write(arrayOfNumbers.join(", "));
+            jsConsole.writeLine(" }");
+
+            function Check() {
+                var index = jsConsole.readInteger("#index");
+                if (index < 0 || index >= arrayOfNumbers.length) {
+                    jsConsole.writeLine("Index is out of the array.");
+                }
+                else if (index == 0 || index == arrayOfNumbers.length - 1) {
+                    jsConsole.writeLine("The element doesnt have 2 neighbours.")
+                }
+                else if (arrayOfNumbers[index] > arrayOfNumbers[index - 1] && arrayOfNumbers[index] > arrayOfNumbers[index + 1]) {
+                    jsConsole.writeLine("The element is bigger than its neighbours.");
+                }
+                else {
+                    jsConsole.writeLine("The element is NOT bigger than its neighbours.");
+                }
+            }
+           
+       </script>
+    </div>
+</body>
+</html>

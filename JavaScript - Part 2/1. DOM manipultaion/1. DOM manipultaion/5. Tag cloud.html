@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        var tags = ["cms", "javascript", "js", "ASP.NET MVC", ".net", ".net",
+                    "css", "wordpress", "xaml", "js", "http", "web", "asp.net",
+                    "asp.net MVC", "ASP.NET MVC", "wp", "javascript", "js", "cms",
+                    "html", "javascript", "http", "http", "CMS",];
+
+        var minFontSize = 13;
+        var maxFontSize = 50;
+        var cloudWidth = 500;
+        var cloudHeight = 500;
+
+        var tagsForCloud = selectElementsForTheCloud(tags);
+        var cloud = createTagCloud();
+        addTagsInCloud();
+        document.body.appendChild(cloud);
+
+        function selectElementsForTheCloud(tags) {
+            var tagsForCloud = new Array();
+            for (var i = 0; i < tags.length; i++) {
+                var currentTag = tags[i].toLowerCase();
+                var tagCounter = 1;
+                for (var a = 0; a < tagsForCloud.length; a++) {
+                    if (currentTag == tagsForCloud[a].toLowerCase() && i != a) {
+                        tagCounter++;
+                    }
+                }
+                if (tagCounter == 1) {
+                    tagsForCloud.push(currentTag);
+                }
+            }
+            return tagsForCloud;
+        }
+
+        function createTagCloud() {
+            var cloudContainer = document.createElement("div");
+            var containerWidth = cloudWidth;
+            var containerHeight = cloudHeight;
+            cloudContainer.id = "Cloud";
+            cloudContainer.style.width = containerWidth + "px";
+            cloudContainer.style.height = containerHeight + "px";
+            cloudContainer.style.border = "1px solid black";
+            return cloudContainer;
+        }
+
+        function addTagsInCloud() {
+            for (var i = 0; i < tagsForCloud.length; i++) {
+                var linkTag = document.createElement('a');
+                linkTag.href = "#";
+                linkTag.style.textDecoration = "none";
+                linkTag.style.color = "black";
+                linkTag.innerHTML = tagsForCloud[i];
+                changeFontSize(linkTag);
+                changeRandomlyThePosition(linkTag);
+                cloud.appendChild(linkTag);
+            }
+        }
+
+        function changeFontSize(linkTag) {
+            var tagText = linkTag.innerHTML;
+            var tagCounter = 1;
+            for (var i = 0; i < tags.length; i++) {
+                if (tagText == tags[i]) {
+                    tagCounter++;
+                }
+            }
+            if (tagCounter == 1) {
+                linkTag.style.fontSize = minFontSize + "px";
+            }
+            else if (tagCounter < 4) {
+                middleFontSize = Math.round((maxFontSize - minFontSize)/2 - 1 + minFontSize); 
+                linkTag.style.fontSize = middleFontSize + "px";
+            }
+            else {
+                linkTag.style.fontSize = maxFontSize + "px";
+            }
+        }
+
+        function changeRandomlyThePosition(linkTag) {
+            linkTag.style.position = "absolute";
+            var coordinate = ((Math.random() * cloudWidth - maxFontSize) + maxFontSize) + "px";
+            linkTag.style.top = coordinate;
+            linkTag.style.left = coordinate;
+        }
+
+
+
+    </script>
+</body>
+</html>

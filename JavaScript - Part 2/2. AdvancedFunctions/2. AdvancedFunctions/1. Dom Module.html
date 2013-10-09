@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <!--<script src="1. Dom Module.js" type="text/javascript"></script>-->
+</head>
+<body>
+    <script>
+        var domModule = (function () {
+            var buffer = new Array();
+            var bufferLength = 0;
+
+            function addElement(element, elementInnerHTML, parentSelector) {
+                var newElement = document.createElement(element);
+                newElement.innerHTML = elementInnerHTML;
+                var parrent = getElementByCssSelector(parentSelector);
+                parrent.appendChild(newElement);
+            }
+
+            function removeElement(selector) {
+                var element = getElementByCssSelector(selector);
+                element.parentNode.removeChild(element);
+            }
+
+            function attachEvent(selector, eventType, eventHandler) {
+                var element = getElementByCssSelector(selector);
+                element.addEventListener(eventType, eventHandler, false);
+            }
+
+            function appendElementToBuffer(elementName) {
+                buffer.push(document.createElement(elementName));
+                bufferLength++;
+
+                if (bufferLength > 100) {
+                    for (var i = 0; i < 100; i++) {
+                        buffer[i].innerHTML = (i + 1) + " ";
+                        document.body.appendChild(buffer[i]);
+                    }
+                    buffer = new Array();
+                    bufferLength = 0;
+                }
+
+            }
+
+            function getElementByCssSelector(selector) {
+                switch (selector.charAt(0)) {
+                    case '#': return document.getElementById(selector.substring(1, selector.lenght))[0]; break;
+                    case '.': return document.getElementsByClassName(selector.substring(1, selector.lenght))[0]; break;
+                    default: return document.getElementsByTagName(selector)[0]; break;
+                }
+            }
+
+            return {
+                addElement: addElement,
+                removeElement: removeElement,
+                attachEvent: attachEvent,
+                appendElementToBuffer: appendElementToBuffer,
+                getElementByCssSelector: getElementByCssSelector,
+            }
+        })();
+
+        domModule.addElement('a', "click", 'body');
+        //domModule.removeElement('a');
+        domModule.attachEvent('a', 'click', function () {
+            alert("Success");
+        });
+        for (var i = 0; i < 101; i++) {
+            domModule.appendElementToBuffer('a');
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>5. HasProperty function</title>
+<link href="styles/js-console.css" rel="stylesheet" />
+    <link href="Styles.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console">
+	    <script src="scripts/js-console.js"> </script>
+        <script>
+           // Write a function that finds the youngest person in a given array of persons and prints his/hers full name
+           // Each person have properties firstname, lastname and age, as shown
+
+            function Person(firstName, lastName, age) {
+                return {
+                    FirstName: firstName,
+                    LastName: lastName,
+                    Age: age,
+                    toString: function Output() {
+                        return this.FirstName + " " + this.LastName;
+                    }
+                };
+            }
+
+            function GetYoungest(arr) {
+                var youngest = 200;
+                var youngestPosition = -1;
+                for (var i = 0; i < arr.length; i++) {
+                    if (arr[i].Age < youngest) {
+                        youngest = arr[i].Age;
+                        youngestPosition = i;
+                    }
+                }
+                return arr[youngestPosition];
+            }
+
+            var persons = [
+                Person("Georgi", "Petrov", 15),
+                Person("Ivan", "Ivanov", 3),
+                Person("Ralica", "Stoikova", 21),
+            ];
+
+            jsConsole.writeLine("Youngest person is " + GetYoungest(persons));
+           
+       </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1. Number`s sqrt", "1. Number`s sqrt\1. Number`s sqrt.csproj", "{A156F2C5-2B32-4679-9EF6-AE9F847748F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2. ReadNumberMethod", "2. ReadNumberMethod\2. ReadNumberMethod.csproj", "{35A06DEF-BE66-457B-B3EE-2AC6D40BF99C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A156F2C5-2B32-4679-9EF6-AE9F847748F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A156F2C5-2B32-4679-9EF6-AE9F847748F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A156F2C5-2B32-4679-9EF6-AE9F847748F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A156F2C5-2B32-4679-9EF6-AE9F847748F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35A06DEF-BE66-457B-B3EE-2AC6D40BF99C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35A06DEF-BE66-457B-B3EE-2AC6D40BF99C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35A06DEF-BE66-457B-B3EE-2AC6D40BF99C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35A06DEF-BE66-457B-B3EE-2AC6D40BF99C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

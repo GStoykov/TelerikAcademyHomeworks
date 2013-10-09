@@ -1,0 +1,18 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A53C6312-BB89-4737-99FA-CEFB4737A5B8}"
+	ProjectSection(SolutionItems) = preProject
+		1. List tree.css = 1. List tree.css
+		1. List tree.html = 1. List tree.html
+		2. Music Categories.css = 2. Music Categories.css
+		2. Music Categories.html = 2. Music Categories.html
+		3. Member login.css = 3. Member login.css
+		3. Member login.html = 3. Member login.html
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

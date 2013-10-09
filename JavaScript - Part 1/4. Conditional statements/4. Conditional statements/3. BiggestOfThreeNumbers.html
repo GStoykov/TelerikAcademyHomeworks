@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>3. Biggest number</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <link href="Styles.css" rel="stylesheet" />
+</head>
+<body>
+
+    <!--Write a script that finds the biggest of three integers using nested if statements.-->
+
+
+    <label for="a">Enter a: </label>
+    <input id="a" />
+    <br />
+    <label for="b">Enter b: </label>
+    <input id="b" />
+    <br />
+    <label for="c">Enter c: </label>
+    <input id="c" />
+    <br />
+    <a href="#" onclick="Function()">Find the biggest</a>
+    
+    <div id="js-console">
+	    <script src="scripts/js-console.js"> </script>
+        <script>
+            function Function() {
+                var a = jsConsole.readFloat("#a");
+                var b = jsConsole.readFloat("#b");
+                var c = jsConsole.readFloat("#c");
+                var biggest = c;
+                
+                if (a >= b) {
+                    if (a >= c) {
+                        biggest = a;
+                    }
+                }
+                else if (b >= a) {
+                        if (b >= c) {
+                        biggest = b;
+                    }
+                }
+                
+                jsConsole.writeLine(biggest);
+                
+            }
+
+       </script>
+    </div>
+</body>
+</html>

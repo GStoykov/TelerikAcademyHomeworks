@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>1. Arranging numbers</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <link href="Styles.css" rel="stylesheet" />
+</head>
+<body>
+   <!-- Write an if statement that examines two integer variables and 
+    exchanges their values if the first one is greater than the second one.-->
+
+    <label for="a">Enter a: </label>
+    <input id="a" />
+    <br />
+    <label for="b">Enter b: </label>
+    <input id="b" />
+    <br />
+    <a href="#" onclick="Function()">Arrange the values</a>
+    
+    <div id="js-console">
+	    <script src="scripts/js-console.js"> </script>
+        <script>
+            function Function() {
+                var a = jsConsole.readFloat("#a");
+                var b = jsConsole.readFloat("#b");
+                var exch;
+                if (a > b) {
+                    exch = a;
+                    a = b;
+                    b = exch;
+                }
+                jsConsole.writeLine("a = " + a);
+                jsConsole.writeLine("b = " + b);
+            }
+
+       </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>2. Divident to 35</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <link href="Styles.css" rel="stylesheet" />
+</head>
+<body>
+    <label for="numberForm">Enter the number: </label>
+    <input id="numberForm" />
+    <br />
+    <a href="#" onclick="Function()">Is number divident</a>
+    
+    <div id="js-console">
+	    <script src="scripts/js-console.js"> </script>
+        <script>
+            function Function() {
+                var number = jsConsole.readInteger("#numberForm");
+                if (number % 35 == 0) {
+                    jsConsole.writeLine("Number " + number + " is divident to 35.");
+                }
+                else {
+                    jsConsole.writeLine("Number " + number + " is NOT divident to 35.");
+                }
+            }
+       </script>
+    </div>
+</body>
+</html>
+

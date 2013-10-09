@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="StringBuilder.js"></script>
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <div data-name-and-age="template" id="list-item">
+        
+    </div>
+
+    <script>
+        var people = [{ name: "Georgi", age: 14 }, { name: "Ivan", age: 20 }, { name: "Ralica", age: 18 }];
+        var tmpl = document.getElementById("list-item");
+
+        tmpl.innerHTML = generateList(people);
+
+        function generateList(people) {
+            var ulText = buildStringBuilder();
+            ulText.append("<ul>");
+
+            for (var i in people) {
+                ulText.append("<li><strong>" + people[i].name + " </strong>");
+                ulText.append("<strong>" + people[i].age + "</strong></li>");
+            }
+
+            ulText.append("</ul>");
+
+            return ulText.toString();
+        }
+
+    </script>
+</body>
+</html>

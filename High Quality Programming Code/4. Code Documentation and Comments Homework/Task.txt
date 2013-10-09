@@ -1,0 +1,7 @@
+﻿1. Open project located in 4. Code Documentation and Comments Homework.zip and:
+	
+	a) Add comments where necessary
+	
+	b) For each public member add documentation as C# XML Documentation Comments
+	
+	c)* Play with Sandcastle / other tools and try to generate CHM book

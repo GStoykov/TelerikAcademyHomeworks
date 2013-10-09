@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="School.School">
+    <Position X="0.5" Y="1" Width="1.5" />
+    <AssociationLine Name="Classes" Type="School.Classes" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2" Y="1.625" />
+        <Point X="2.375" Y="1.625" />
+        <Point X="2.375" Y="2.568" />
+        <Point X="3.25" Y="2.568" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.134" Y="0.132" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAACAAAABAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>School.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Classes" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="School.Classes">
+    <Position X="3.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIgAAAIhAAQgAAgAAAAAAgAAAAAAAAAAAIAQgAAIgA=</HashCode>
+      <FileName>Classes.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="1.3" />
+  </Class>
+  <Class Name="School.Teachers">
+    <Position X="5.75" Y="4.75" Width="1.5" />
+    <InheritanceLine Type="School.Human" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.75" Y="7.512" />
+        <Point X="5.125" Y="7.512" />
+        <Point X="5.125" Y="7.079" />
+        <Point X="5.75" Y="7.079" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAgAAAIBAAAAAAAQAAAAACAAAEAAAAAAAAEAAAAIAA=</HashCode>
+      <FileName>Teachers.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Disciplines" />
+    </ShowAsAssociation>
+    <Lollipop Position="1.194" />
+  </Class>
+  <Class Name="School.Student">
+    <Position X="0.75" Y="4.75" Width="1.5" />
+    <InheritanceLine Type="School.Human" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.25" Y="7.512" />
+        <Point X="2.875" Y="7.512" />
+        <Point X="2.875" Y="6.935" />
+        <Point X="2.25" Y="6.935" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAgAAAIBAAAAAAAAAAAAAAAAAAIAAAACAAAAAAAIAA=</HashCode>
+      <FileName>Students.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.931" />
+  </Class>
+  <Class Name="School.Human">
+    <Position X="3.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Human.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="School.Disciplines">
+    <Position X="8.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAIBAAAABAAAIAAAASAAAAEAAAAABAAAAAAIAA=</HashCode>
+      <FileName>Disciplines.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="School.ICommentable">
+    <Position X="6.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>ICommentable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

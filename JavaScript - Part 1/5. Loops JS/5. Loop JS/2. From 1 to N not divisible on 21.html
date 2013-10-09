@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>1. Numbers from 1 to N</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <link href="Styles.css" rel="stylesheet" />
+</head>
+<body>
+
+    <!--Write a script that prints all the numbers from 1 to N, that are not divisible by 3 and 7 at the same time -->
+    
+    <label for="a">Enter N: </label>
+    <input id="a" />
+    <br />
+
+    <a href="#" onclick="Function()">Show the numbers</a>
+    
+    <div id="js-console">
+	    <script src="scripts/js-console.js"> </script>
+        <script>
+            function Function() {
+                var number = jsConsole.readInteger("#a");
+                jsConsole.writeLine("Numbers from 1 to " + number + " :");
+                for (var i = 1; i <= number; i++) {
+                    if (i % 21 == 0) {
+                        continue;
+                    }
+                    jsConsole.writeLine(i);
+                }
+            }
+
+       </script>
+    </div>
+</body>
+</html>

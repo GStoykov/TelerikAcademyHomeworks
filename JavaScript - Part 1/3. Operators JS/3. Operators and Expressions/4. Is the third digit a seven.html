@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>4. Is third digit a seven</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <link href="Styles.css" rel="stylesheet" />
+</head>
+<body>
+    <label for="numberForm">Enter the number: </label>
+    <input id="numberForm" />
+    <br />
+    <a href="#" onclick="Function()">Check</a>
+    
+    <div id="js-console">
+	    <script src="scripts/js-console.js"> </script>
+        <script>
+            function Function() {
+                var number = jsConsole.readInteger("#numberForm");
+                number = number / 100;
+                number = number % 10;              
+                number = number.toPrecision(1);
+                if (number == 7) {
+                    jsConsole.writeLine("Third digit is 7.");
+                }
+                else {
+                    jsConsole.writeLine("Third digit is NOT 7.");
+                }
+            }
+       </script>
+    </div>
+</body>
+</html>

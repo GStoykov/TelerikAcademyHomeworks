@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>5. Nbsp replace</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <link href="Styles.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console">
+	    <script src="scripts/js-console.js"> </script>
+        <script>
+            //Write a function that replaces non breaking white-spaces in a text with &nbsp;
+
+            var text = "We are living in an yellow submarine. We don't have anything else. Inside the submarine is very tight."
+            text += "So we are drinking all the day. We will move out of it in 5 days.";
+            jsConsole.writeLine(text);
+
+            var result = "";
+            for (var i = 0; i < text.length; i++) {
+                if (text[i] == " ") {
+                    result += "&nbsp;";
+                }
+                else {
+                    result += text[i];
+                }
+            }
+            jsConsole.writeLine(result);
+        </script>
+    </div>
+</body>
+</html>

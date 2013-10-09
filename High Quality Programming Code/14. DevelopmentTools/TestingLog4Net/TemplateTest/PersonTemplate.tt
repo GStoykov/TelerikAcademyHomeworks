@@ -1,0 +1,21 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+using System;
+
+public class Person
+{
+	public string firstName { get; set; }
+	public string lastName { get; set; }
+	public byte Age { get; set; }
+
+	public Person(string fName, string lName, byte age)
+	{
+		this.firstName = fName;
+		this.lastName = lName;
+		this.Age = age;
+	}
+	
+}

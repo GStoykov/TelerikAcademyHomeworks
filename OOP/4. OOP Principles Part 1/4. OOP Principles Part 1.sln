@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "School", "School\School.csproj", "{DF75BB10-B1ED-4939-8DFA-A2EDF897829B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Human", "Human\Human.csproj", "{7CA00369-FDB6-447A-BEAC-2C1EA69A373C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Animals", "Animals\Animals.csproj", "{D9529AFD-01D5-4220-A12E-E7D83C65D0B5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF75BB10-B1ED-4939-8DFA-A2EDF897829B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF75BB10-B1ED-4939-8DFA-A2EDF897829B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF75BB10-B1ED-4939-8DFA-A2EDF897829B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF75BB10-B1ED-4939-8DFA-A2EDF897829B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CA00369-FDB6-447A-BEAC-2C1EA69A373C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CA00369-FDB6-447A-BEAC-2C1EA69A373C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CA00369-FDB6-447A-BEAC-2C1EA69A373C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CA00369-FDB6-447A-BEAC-2C1EA69A373C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9529AFD-01D5-4220-A12E-E7D83C65D0B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9529AFD-01D5-4220-A12E-E7D83C65D0B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9529AFD-01D5-4220-A12E-E7D83C65D0B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9529AFD-01D5-4220-A12E-E7D83C65D0B5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

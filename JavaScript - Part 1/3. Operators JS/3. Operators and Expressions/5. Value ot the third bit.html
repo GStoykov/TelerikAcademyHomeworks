@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>5. Value ot the third bit</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <link href="Styles.css" rel="stylesheet" />
+</head>
+<body>
+    <label for="numberForm">Enter the number: </label>
+    <input id="numberForm" />
+    <br />
+    <a href="#" onclick="Function()">Check the value</a>
+    
+    <div id="js-console">
+	    <script src="scripts/js-console.js"> </script>
+        <script>
+            jsConsole.writeLine("Number`s third bit is: ")
+            function Function() {
+                var number = jsConsole.readInteger("#numberForm");
+                var eight = 8;
+                var result = number & eight;
+                result = result >> 3;
+                jsConsole.writeLine(number + " --> " + result);
+            }
+       </script>
+    </div>
+</body>
+</html>

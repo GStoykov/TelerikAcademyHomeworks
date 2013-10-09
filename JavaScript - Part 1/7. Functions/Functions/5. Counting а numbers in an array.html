@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>5. Counting а numbers in an array</title>
+<link href="styles/js-console.css" rel="stylesheet" />
+    <link href="Styles.css" rel="stylesheet" />
+</head>
+<body>
+    <a href="#" onclick="Test()">Count</a>
+    <div id="js-console">
+	    <script src="scripts/js-console.js"> </script>
+        <script>
+            // Write a function that counts how many times given number appears in given array.
+            // Write a test function to check if the function is working correctly.
+            var arrayOfNumbers = [1, 2, 1, 4, -32, 15, 7, 23, -32, 48];
+            jsConsole.write("Array: { ");
+            jsConsole.write(arrayOfNumbers.join(", "));
+            jsConsole.writeLine(" }");
+
+            function Test() {
+                CountTheOcurrences(2);
+                CountTheOcurrences(15);
+                CountTheOcurrences(48);
+                CountTheOcurrences(1);
+            }
+
+            function CountTheOcurrences(number) {
+                var counter = 0;
+                for (var i = 0; i < arrayOfNumbers.length; i++) {
+                    if (arrayOfNumbers[i] == number) {
+                        counter++;
+                    }
+                }
+                jsConsole.writeLine("The number " + number + " appears int the array: " + counter + " times.");
+            }
+       </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>6. Most frequent number</title>
+<link href="styles/js-console.css" rel="stylesheet" />
+    <link href="Styles.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div id="js-console">
+	    <script src="scripts/js-console.js"> </script>
+        <script>
+
+            // Write a program that finds the most frequent number in an array. 
+
+            var arr = [1, 6, 3, 2, 1, 4, 5, 6, 6, 9, 8];
+            var counter;
+            var bestCounter = 1;
+            var bestElement;
+
+            for (var i = 0; i < arr.length - 1; i++) {
+                counter = 1;
+
+                for (var j = i + 1; j < arr.length; j++) {
+                    if (arr[i] == arr[j]) {
+                        counter++;
+                    }
+                }
+                if (counter > bestCounter) {
+                    bestCounter = counter;
+                    bestElement = arr[i];
+                }
+            }
+
+            jsConsole.writeLine(arr.join(","));
+            if (bestCounter == 1) {
+                jsConsole.writeLine("There is no equels elements in the array.");
+            }
+            else {
+                jsConsole.writeLine("Most frequent numbers is: " + bestElement + " (" + bestCounter +" times)");
+            }
+       </script>
+    </div>
+</body>
+</html>

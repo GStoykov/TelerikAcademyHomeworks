@@ -1,0 +1,51 @@
+﻿body
+{
+    font-family:Tahoma;  
+}
+
+thead
+{
+    text-align:center;
+    color:white;
+    background-color:rgb(89, 189, 6);    
+}
+
+td
+{
+    font-size:smaller;   
+    text-align:left;
+    padding-right:3em;
+    border-right:1px solid gray;
+
+}
+
+th
+{
+    font-size:smaller;   
+    font-weight:100;
+    text-align:left;
+    border-right:1px solid gray;
+
+}
+
+tr:nth-child(even)
+{
+    background-color: rgb(236, 236, 216);
+}
+
+tr
+{ 
+    border-bottom-color: rgb(236, 236, 216);
+    border-bottom:1px solid gray;
+    
+}
+
+table
+{
+    border-spacing:0px;
+    border-bottom:1px solid gray;
+
+}
+
+
+

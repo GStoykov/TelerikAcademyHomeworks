@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        body{
+            margin-top: 20px;
+        }
+        a{
+            border: 2px solid black;
+            color: black;
+            text-decoration: none;
+            padding: 10px;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <a href="#" onclick="circularDiv()">Add div in the cirle</a>
+    <a href="#" onclick="rectangularDiv()">Add div in the rectangle</a>
+    <script>
+        function circularDiv() {
+            movingShapes.add('ellipse');
+        }
+        function rectangularDiv() {
+            movingShapes.add('rect');
+        }
+
+       
+        var movingShapes = (function () {
+            var circularArray = new Array();
+            var rectangleArray = new Array();
+            var divDiameter = 50;
+            var rectangleWidth = 300;
+            var rectangleHeight = 100;
+            var speed = 50;
+            var angle = 0;
+
+            function generateRandomColor() {
+                var red = (Math.random() * 256) | 0;
+                var green = (Math.random() * 256) | 0;
+                var blue = (Math.random() * 256) | 0;
+
+                return "rgb(" + red + "," + green + "," + blue + ")"
+            }
+
+            function createDiv(arr) {
+                var div = document.createElement('div');
+                div.style.width = divDiameter + 'px';
+                div.style.height = divDiameter + 'px';
+                div.style.borderRadius = 27 + 'px';
+                div.style.backgroundColor = generateRandomColor();
+                var borderColor = generateRandomColor();
+                div.style.border = 1 + 'px solid ' + borderColor;
+                var leftPos = 50;
+                var topPos = 50;
+                div.style.position = 'absolute';
+                div.style.left = leftPos + divDiameter * arr.length * 2 + 'px';
+                div.style.top = topPos + divDiameter + 'px';
+                div.style.margin = 220 + 'px';
+                return div;
+            }
+
+            function appendArrays(arrayOfDivs) {
+                for (i = 0; i < arrayOfDivs.length; i++) {
+                    document.body.appendChild(arrayOfDivs[i]);
+                }
+            }
+
+            function add(movement) {
+                if (movement == 'rect') {
+                    rectangleArray.push(createDiv(rectangleArray));
+                    appendArrays(rectangleArray);
+                    rectMovement();
+                }
+                else if (movement == 'ellipse') {
+                    circularArray.push(createDiv(circularArray));
+                    appendArrays(circularArray);
+                    ellipseMovement();
+                }
+            }
+
+            function ellipseMovement() {
+                for (var i = 0; i < circularArray.length; i++) {
+                    circularArray[i].style.left = Math.cos(angle + 2 * Math.PI / circularArray.length * i) / divDiameter * 10000 + 'px';
+
+                    circularArray[i].style.top = Math.sin(angle + 2 * Math.PI / circularArray.length * i) / divDiameter * 7000 + 'px';
+                }
+
+                angle = angle + 0.01;
+
+                setTimeout(ellipseMovement, speed);
+            }
+
+            function rectMovement() {
+                var leftPos;
+                var topPos;
+
+                for (var i = 0; i < rectangleArray.length; i++) {
+                    leftPos = parseInt(rectangleArray[i].style.left);
+                    topPos = parseInt(rectangleArray[i].style.top);
+
+                    if (leftPos < rectangleWidth && topPos == 0){
+                        leftPos += 5;
+                    }
+                    else if (leftPos == rectangleWidth && topPos < rectangleHeight) {
+                        topPos += 5;
+                    }
+                    else if (topPos == rectangleHeight && leftPos > 0) {
+                        leftPos -= 5;
+                    }
+                    else {
+                        topPos -= 5;
+                    }
+
+                    rectangleArray[i].style.left = leftPos + 'px';
+                    rectangleArray[i].style.top = topPos + 'px';
+                }
+
+                setTimeout(rectMovement, speed);
+            }
+
+            return {
+                add: add,
+            };
+
+        })();
+
+    </script>
+</body>
+</html>

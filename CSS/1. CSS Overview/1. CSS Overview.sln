@@ -1,0 +1,18 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E746268D-C46E-4D31-B027-2A635C51D6BF}"
+	ProjectSection(SolutionItems) = preProject
+		1. Ticked ID.css = 1. Ticked ID.css
+		1. Ticked ID.html = 1. Ticked ID.html
+		2. Contact table.css = 2. Contact table.css
+		2. Contact table.html = 2. Contact table.html
+		3. The Header.css = 3. The Header.css
+		3. The Header.html = 3. The Header.html
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

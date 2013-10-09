@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>1. Odd or even number</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <link href="Styles.css" rel="stylesheet" />
+</head>
+<body>
+    <label for="numberForm">Enter the number: </label>
+    <input id="numberForm" />
+    <br />
+    <a href="#" onclick="OddOrEven()">Odd or even</a>
+    
+    <div id="js-console">
+	    <script src="scripts/js-console.js"> </script>
+        <script>
+	        function OddOrEven() {
+	            var number = jsConsole.readInteger("#numberForm");
+	            if (number % 2 == 0) {
+	                jsConsole.writeLine("Number " + number + " is even.");
+	            }
+	            else {
+	                jsConsole.writeLine("Number " + number + " is odd.");
+	            }
+	        }
+       </script>
+    </div>
+</body>
+</html>

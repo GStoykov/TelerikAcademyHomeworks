@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>7. Prime number</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <link href="Styles.css" rel="stylesheet" />
+</head>
+<body>
+    <label for="numberForm">Enter the number: </label>
+    <input id="numberForm" />
+    <br />
+    <a href="#" onclick="Function()">Check</a>
+    
+    <div id="js-console">
+	    <script src="scripts/js-console.js"> </script>
+        <script>
+            function Function() {
+                var number = jsConsole.readInteger("#numberForm");
+                var remainder = 0;
+                for (var i = 2; i < Math.sqrt(number) ; i++) {
+                    remainder = number % i;
+                    if (remainder == 0) {
+                        break;
+                    }
+                }
+                if (remainder != 0 || number < 4) {
+                    jsConsole.writeLine(number + " is prime");
+                }
+                else {
+                    jsConsole.writeLine(number + " is NOT prime");
+                }
+            }
+       </script>
+    </div>
+</body>
+</html>

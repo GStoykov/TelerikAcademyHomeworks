@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <label for="textArea">Enter some text here:</label><br />
+    <textarea id="textArea" ></textarea><br />
+
+    <label for="fontColor">font color: </label>
+    <input id="fontColor" type="color" onchange="changeTextAreaFontColor()" /> <br />
+
+    <label for="backgroundColor">font color: </label>
+    <input id="backgroundColor" type="color" onchange="changeTextAreaBackgoundColor()" /> <br />    
+
+    <script>
+        var textArea = document.getElementById('textArea');
+
+        function changeTextAreaFontColor() {
+            var fontColor = document.getElementById('fontColor').value;
+            textArea.style.color = fontColor;
+        }
+       
+        function changeTextAreaBackgoundColor() {
+            var backgroundColor = document.getElementById('backgroundColor').value;
+            textArea.style.backgroundColor = backgroundColor;
+        }
+
+    </script>
+
+</body>
+</html>
